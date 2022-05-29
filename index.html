@@ -1,69 +1,100 @@
 <!doctype html>
 <html>
-<head>
-  <title>CYF Project Week 3</title>
-	<style>
-		.center {
-		margin: auto;
-		text-align: center;
-		}
-	</style>
-
-</head>
-
-<body>
-	<div class="center">
-	<h3>CYF Project - Week 3</h3>
-	<h3>Fatemeh Rahimi</h3>
-	<br>
-	</div>
-	<p class="center">
-		<img id='item_image'  width="600" height="400">
-	</p>
-	<br>
-	<div class="center">
-<button id="previous">< Previous</button>
-<button id="next">Next></button>
-<p>Item: <span id='item_name'> </span>  -   Price: £<span id='item_price'></span></p>
-<p><button id="button_addcart">Add to shopping cart</button></p>
-<p>
-
-</p>
-	</div>
-<hr>
-<div class="center">
-<p>The items in your shopping cart: <span id="items"></p>
-<p id="initial_text_basket">Your shopping cart is empty!<span id="items"></p>
-<ul id="item_list"></ul>
-
-<p>Total price: £<span id="total">0</span></p>
-<p><button id="go_checkout" is_visible=false>Continue to checkout</button></p>
-<p id="message"></p>
-</div>
-<hr>
-<div class="center">
-<p>Comments (<span id="comment_number">0</span>):</p>
-<ul id="list"></ul>
-<p id="initial_text">No comments yet! Be the first one to leave a comment.</p>
-
-<p>Please leave a comment here:</p>
-<p>Enter your name (optional): </p>
-<input id="input_name" />
-<p>Write your comment: </p>
-<input id="input_text" />
-<button id="button_comment">Submit</button>
-</div>
-	<br><hr>
-	
-	
-	<script src="script.js"></script>
-</body>
-<footer class="center">&copy; 2022 Created by Fatemeh Rahimi @CodeYourFuture.
-</footer>
+   <head>
+      <title>CYF Project Week 3</title>
+      <style>
+         body {
+         background-color: #F8FBFA;
+         margin: 15px 35px
+         }		
+         button {
+         background-color: #BCEE08;
+         border-color: EE4808;
+         border-radius: 5px;
+         border: 1px blue solid;
+         }
+         h2 {
+         text-align: center;
+         }
+         .top {
+         margin: auto;
+         text-align: center;
+         background-color: #0711C2;
+         color: #FFFFFF;
+         }
+         .center {
+         margin: auto;
+         text-align: center;
+         }
+         .highlight {
+         background-color: #EECDC1;
+         width: 400px;
+         margin: auto;
+         }
+         .highlight-text {
+         color: #C43A04;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="top">
+         <br>
+         <h4>CYF Project - Week 3</h4>
+         <h2>Fatemeh Rahimi's Digital Shop</h2>
+         <br>
+      </div>
+      <br><br>
+      <p class="center"><strong>Important Note </strong>: Every section of this project is explained at the beginning of that section and also includes the <strong>Users Stories </strong>. This is the front-end deployed website and hence it is an enhanced version of the CYF blocks version. However, the idea, back-end, and corresponding JavaScript CYF blocks are the same. Every requirement related to the user stories is highlighted in bold here. </p>
+      <br>
+      <hr>
+      <h2>Exploring Items by Image</h2>
+      <p>In this section you can explore the available items in my website. List of the items <strong> Names </strong>, <strong> Prices </strong> and <strong>Image links </strong>  are stored in separate <strong> arrays </strong>. The idea of this section came from the <strong> Image carousel</strong> project. By clicking on the <strong> Next </strong>  and <strong> Previous </strong> buttons you can navigate through the items in the corresponding array. The item’s name and price will be shown below the image. By clicking on <strong> Add to the shopping cart </strong>, they will be listed in the section bellow (Shopping Cart). </p>
+      <br>
+      <p class="center">
+         <img id='item_image'  width="600" height="400">
+      </p>
+      <div class="center">
+         <p>
+            <button id="previous"><strong> < Previous</strong></button>
+            <button id="next"><strong>Next ></strong></button>
+         </p>
+         <br>
+         <p>Item: <strong><span id='item_name' class = "highlight-text">  </span></strong>  -    Price: <strong> <span class = "highlight-text">£<span><span id='item_price' class = "highlight-text"></span></strong></p>
+         <br>
+         <p><button id="button_addcart"><strong> Add to shopping cart</strong></button></p>
+         <br>
+      </div>
+      <hr>
+      <h2>Shopping Cart</h2>
+      <p> This section <strong> lists </strong> every <strong> item </strong> in your <strong> shopping cart </strong>. Every time you select an item, a new list item will be created, and the <strong> name </strong> and <strong> price </strong> will be shown. The <strong> total price </strong> will be shown in the end. In the beginning, an initial message says that <strong> the shopping basket is empty </strong>. By adding the first item, this initial message will be removed and replaced by the shopping basket list. Also, a new button will appear as <strong> Continue to checkout </strong> for payment. However, by pressing it, a text will appear that says this option will be added in the future (according to the project's guidelines). You can test all these by refreshing the page and adding new items.</p>
+      <br>
+      <div class="center">
+         <p><strong>The items in your shopping cart:  </strong><span id="items"></p>
+         <p id="initial_text_basket" class = "highlight">Your shopping cart is empty!<span id="items"></p>
+         <ol id="item_list" class = "highlight"></ol>
+         <p ><strong> Total price: <span class = "highlight-text">£<span><span id="total" class = "highlight-text">0</span></strong></p>
+         <p><button id="go_checkout" is_visible=false><strong> Continue to checkout</strong></button></p>
+         <p id="message"></p>
+      </div>
+      <hr>
+      <h2>Commenting</h2>
+      <p>In this section you can write your <strong> Comments </strong>. Every time you enter a comment, it will be shown as a new <strong> list item </strong>. The <strong> name input </strong> is optional and if it is empty, it will be replaced by the word <strong> “Unknown”</strong>. If the <strong>comment input </strong> is empty, it is not valid and nothing will happen (<strong>“if” </strong> CYF blocks are used here). To submit the comment, you should click on the <strong> Submit</strong> button. The <strong> total number </strong>of the comments will be updated every time a comment is submitted. In the beginning, an initial message says that there is <strong> no comment </strong>. By submitting the first comment, this initial message will be deleted and replaced by the first comment list.</p>
+      <div class="center">
+         <br>
+         <p><strong>Comments </strong> (<span id="comment_number">0</span>):</p>
+         <ul id="list" class = "highlight"></ul>
+         <p id="initial_text" class = "highlight">No comments yet! Be the first one to leave a comment.</p>
+         <br>
+         <p><strong> Please leave a comment here:</strong></p>
+         <p>Enter your name (optional): </p>
+         <input id="input_name" />
+         <p>Write your comment and click on "Submit" </strong>: </p>
+         <input id="input_text" />
+         <button id="button_comment"><strong> Submit</strong></button>
+      </div>
+      <br><br>
+      <hr>
+      <script src="script.js"></script>
+   </body>
+   <footer class="center">&copy; 2022 Created by Fatemeh Rahimi @CodeYourFuture.</footer>
 </html>
-
-
-
-
-
-
